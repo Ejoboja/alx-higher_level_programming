@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Get the Python file name from the environment variable PYFILE
+python_file=$PYFILE
+
+# Check if the PYFILE variable is set
+if [ -z "$python_file" ]; then
+  echo "PYFILE environment variable is not set."
+  exit 1
+fi
+
+# Check if the file exists
+if [ ! -f "$python_file" ]; then
+  echo "File $python_file not found."
+  exit 1
+fi
+
+# Run the Python file
+python "$python_file"
